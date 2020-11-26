@@ -15,7 +15,6 @@ const Grid = () => {
 
   useEffect(() => {
     const getPets = async () => {
-        // TODO - need to handle the input from the UI.
         let searchTerm = {
           organization: "mn483",
           type: 'cat',

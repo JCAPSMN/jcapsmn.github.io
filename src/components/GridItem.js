@@ -24,10 +24,13 @@ const GridItem = ({ animal, index }) => {
     // eslint-disable-next-line react/prop-types
     return animal.name.substring(0, 100);
   };
+  const rand = (photos) => {
+    return Math.floor(Math.random() * (photos.length - 0) + 0);
+  }
   return (
       <div className="col">
     <div className="card h-100 bg-dark text-white" style={cardStyle}>
-        <img src={animal.photos[0].large} className="card-img" style={imageStyle} alt="..." />
+        <img src={animal.photos[rand(animal.photos)].large} className="card-img" style={imageStyle} alt="..." />
         <div className="card-img-overlay">
             <h5 className="card-title">{nameFormat()}</h5>
             <p className="card-text">{animal.size},{animal.status}</p>
