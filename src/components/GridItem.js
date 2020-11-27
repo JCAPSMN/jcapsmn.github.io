@@ -19,14 +19,18 @@ const GridItem = ({ animal, index }) => {
   	const nameFormat = () => {
     	return animal.name.substring(0, 100);
   	};
-  	const rand = () => {
-		let pos = Math.floor(Math.random() * (animal.photos.length - 0) + 0);
-		return animal.photos[pos].large;
+  	const photo = () => {
+		if (animal.photos.length) {
+			let pos = Math.floor(Math.random() * (animal.photos.length - 0) + 0);
+			return animal.photos[pos].large;
+		}
+		return process.env.PUBLIC_URL + '/unavailable-image.jpg';
+		
   	}
   	return (
     	<div className="col">
 			<div className="card h-100 text-white" style={cardStyle}>
-				<img src={rand()} className="card-img img-thumbnail" style={imageStyle} alt="..." />
+				<img src={photo()} className="card-img img-thumbnail" style={imageStyle} alt="..." />
 				<div className="card-img-overlay d-flex flex-column justify-content-center align-items-center">
 					<h5 className="card-title">{nameFormat()}</h5>
 					<svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-heart-fill my-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

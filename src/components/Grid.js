@@ -8,6 +8,8 @@ const Grid = () => {
   const [currentPage] = useState(1);
   const [totalPage, setTotalPage] = useState(null);
   const [pets, updatePets] = useState([]);
+  const [cats, updateCats] = useState([]);
+  const [dogs, updateDogs] = useState([]);
   // refs
   const pageRef = useRef(totalPage);
   const loadingRef = useRef(loading);
@@ -16,19 +18,21 @@ const Grid = () => {
   useEffect(() => {
     const getPets = async () => {
         let searchTerm = {
-          organization: "mn483",
-          type: 'cat',
-          page: currentPageRef.current
+			organization: "mn483",
+	        page: currentPageRef.current
         };
         await pf.animal.search(searchTerm).then(response => {
-          let petsData = response.data;
-          updatePets(pets => [...pets, petsData.animals].flat());
-          updateTotalPage(petsData.pagination.total_pages);
-          updateLoading(false);
+			let petsData = response.data;
+			updatePets(pets => [...pets, petsData.animals].flat());
+			updateTotalPage(petsData.pagination.total_pages);
+			updateLoading(false);
+			updateCats(cats => [...cats, petsData.animals.filter(animal => animal.type === 'Cat')].flat());
+			updateDogs(dogs => [...dogs, petsData.animals.filter(animal => animal.type === 'Dog')].flat());
+			console.log(dogs.length);
         });
-      };
-      getPets();
-  }, []);
+    };
+    getPets();
+}, []);
 
   const updateTotalPage = data => {
     pageRef.current = data;
@@ -62,8 +66,8 @@ const Grid = () => {
 			<div className="tab-content" id="nav-tabContent">
 				<div className="tab-pane fade show active" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">
 					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-						{pets.length > 0 ? (
-						pets.map((animal, i) => {
+						{cats.length > 0 ? (
+						cats.map((animal, i) => {
 							return <GridItem animal={animal} key={animal.id} />;
 						})) : (<p className="col-sm-12 col-md-12 col-lg-12 text-center lead">'No Cats Currently Available</p>)}
 					</div>
@@ -71,8 +75,8 @@ const Grid = () => {
 				</div>
 				<div className="tab-pane fade" id="nav-dog" role="tabpanel" aria-labelledby="nav-dog-tab">
 					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-						{pets.length < 0 ? (
-						pets.map((animal, i) => {
+						{dogs.length > 0 ? (
+						dogs.map((animal, i) => {
 							return <GridItem animal={animal} key={animal.id} />;
 						})) : (<p className="col-sm-12 col-md-12 col-lg-12 text-center lead">No Dogs Currently Available</p>)}
 					</div>
