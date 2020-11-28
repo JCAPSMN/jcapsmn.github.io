@@ -13,6 +13,7 @@ export default function BlogFragment() {
     }, [])
 
     const formatExcerpt = (excerpt, length) => {
+        excerpt = excerpt.replace(/(<([^>]+)>)/gi, "");
     	return excerpt.substring(0, length) + ' ... ';
     };
       
@@ -25,7 +26,7 @@ export default function BlogFragment() {
     }
     return (
         <div className="container py-5">
-        <div className="row row-cols-1 row-cols-md-3 row-cols-md-4 g-4">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             {articles.length > 0 ? (
                 articles.map((article, i) => {
                     return  <div key={i} className="col">
@@ -36,7 +37,7 @@ export default function BlogFragment() {
                                     <span className="mb-3">
                                     <span className="badge rounded-pill bg-purple">{getCategory(article).name}</span>
                                     </span>
-                                    <p className="card-text" dangerouslySetInnerHTML={{__html: formatExcerpt(article.excerpt.rendered, 150)}} />
+                                    <p className="card-text" dangerouslySetInnerHTML={{__html: formatExcerpt(article.excerpt.rendered, 110)}} />
                                     <p className="card-text text-right mt-auto"><small className="text-muted">Posted on {formatDate(article.date, { year: 'numeric', month: 'short', day: 'numeric' })}</small></p>
                                 </div>
                             </div>
