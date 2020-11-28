@@ -26,9 +26,8 @@ const Grid = () => {
 			updatePets(pets => [...pets, petsData.animals].flat());
 			updateTotalPage(petsData.pagination.total_pages);
 			updateLoading(false);
-			updateCats(cats => [...cats, petsData.animals.filter(animal => animal.type === 'Cat')].flat());
-			updateDogs(dogs => [...dogs, petsData.animals.filter(animal => animal.type === 'Dog')].flat());
-			console.log(dogs.length);
+			updateCats(() => [petsData.animals.filter(animal => animal.type === 'Cat')].flat());
+			updateDogs(() => [petsData.animals.filter(animal => animal.type === 'Dog')].flat());
         });
     };
     getPets();

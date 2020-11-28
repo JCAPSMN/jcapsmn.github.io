@@ -3,12 +3,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const GridItem = ({ animal, index }) => {
-	const imageStyle = {
-    	height: "100%",
-      	width: "100%",
-      	objectFit: "cover",
-      	objectPosition: "center center"
-  	};
   	const cardStyle = {
     	maxHeight: "240px",
     	height:"auto",
@@ -22,15 +16,31 @@ const GridItem = ({ animal, index }) => {
   	const photo = () => {
 		if (animal.photos.length) {
 			let pos = Math.floor(Math.random() * (animal.photos.length - 0) + 0);
-			return animal.photos[pos].large;
+			return (
+				<picture className="card-img">
+					{animal.photos[pos].medium && (
+						<source media="(max-width: 800px)" srcSet={`${animal.photos[pos].medium} 500w` }/>
+					)}
+					{animal.photos[pos].medium && (
+						<source media="(max-width: 1000px)" srcSet={`${animal.photos[pos].large} 800w` }/>
+					)}
+					{animal.photos[pos].full && (
+						<source media="(min-width: 1000px)" srcSet={`${animal.photos[pos].full} 1000w` }/>
+					)}
+					{animal.photos[pos].small ? (
+						<img src={animal.photos[pos].medium} alt="..." className="card-img img-thumbnail" />
+					) : (
+						<img src={process.env.PUBLIC_URL + '/unavailable-image.jpg'} alt="..."  className="card-img img-thumbnail"/>
+					)}
+				</picture>
+				)
 		}
-		return process.env.PUBLIC_URL + '/unavailable-image.jpg';
 		
   	}
   	return (
     	<div className="col">
 			<div className="card h-100 text-white" style={cardStyle}>
-				<img src={photo()} className="card-img img-thumbnail" style={imageStyle} alt="..." />
+				{photo()}
 				<div className="card-img-overlay d-flex flex-column justify-content-center align-items-center">
 					<h5 className="card-title">{nameFormat()}</h5>
 					<svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-heart-fill my-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
