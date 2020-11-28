@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Header() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom border-2 border-light">
             <div className="container-fluid">
                 <Link className="navbar-brand d-flex align-items-center text-center text-wrap fs-6" width="200px" to="/">
                     <img src={process.env.PUBLIC_URL + 'JCAPS_NOWords.png'} alt="" height="40" className="d-inline-block align-middle" />

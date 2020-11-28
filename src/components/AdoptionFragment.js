@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import GridItem from "./GridItem";
+import AnimalCard from "./AnimalCard";
 import pf from "../API";
-import Loader from "../components/Loader";
+import Loader from "./Loader";
 
 const Grid = () => {
   const [loading, setLoading] = useState(true);
@@ -67,7 +67,7 @@ const Grid = () => {
 					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
 						{cats.length > 0 ? (
 						cats.map((animal, i) => {
-							return <GridItem animal={animal} key={animal.id} />;
+							return <AnimalCard animal={animal} key={animal.id} />;
 						})) : (<p className="col-sm-12 col-md-12 col-lg-12 text-center lead">'No Cats Currently Available</p>)}
 					</div>
 					{loader}
@@ -76,7 +76,7 @@ const Grid = () => {
 					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
 						{dogs.length > 0 ? (
 						dogs.map((animal, i) => {
-							return <GridItem animal={animal} key={animal.id} />;
+							return <AnimalCard animal={animal} key={animal.id} />;
 						})) : (<p className="col-sm-12 col-md-12 col-lg-12 text-center lead">No Dogs Currently Available</p>)}
 					</div>
 					{loader}

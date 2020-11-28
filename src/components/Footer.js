@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 export default function Footer() {
     return (
-        <footer className="mt-auto text-muted text-center p-2">
+        <footer className="mt-auto text-muted text-center p-3 border-top border-1 border-light">
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-2 justify-content-md-center">
                     <div className="col col-lg-6">

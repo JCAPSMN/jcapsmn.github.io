@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 
 const GridItem = ({ animal, index }) => {
   	const cardStyle = {
-    	maxHeight: "240px",
-    	height:"auto",
     	padding: 0
   	};
 
@@ -39,7 +37,7 @@ const GridItem = ({ animal, index }) => {
   	}
   	return (
     	<div className="col">
-			<div className="card h-100 text-white" style={cardStyle}>
+			<div className="card h-100 text-white shadow ratio ratio-4x3" style={cardStyle}>
 				{photo()}
 				<div className="card-img-overlay d-flex flex-column justify-content-center align-items-center">
 					<h5 className="card-title">{nameFormat()}</h5>

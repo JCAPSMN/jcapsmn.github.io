@@ -13,6 +13,9 @@ body, #root {
     min-height: 100vh;
 }
 
+.navbar-brand {
+    max-width: 250px;
+}
 button.nav-link {
     font-family: inherit;
     border: unset;

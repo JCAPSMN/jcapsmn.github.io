@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Blog() {
+export default function Events() {
     return (
         <div>
-            Blog
+            Events
         </div>
     )
 }

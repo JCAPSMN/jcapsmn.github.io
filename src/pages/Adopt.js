@@ -1,7 +1,7 @@
 import React from 'react';
-import Grid from "../components/Grid";
+import AdoptionFragment from "../components/AdoptionFragment";
 export default function Adopt() {
     return (
-        <Grid />
+        <AdoptionFragment />
     )
 }
