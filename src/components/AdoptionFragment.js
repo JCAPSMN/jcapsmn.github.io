@@ -64,11 +64,11 @@ const Grid = () => {
 			</nav>
 			<div className="tab-content" id="nav-tabContent">
 				<div className="tab-pane fade show active" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">
-					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 						{cats.length > 0 ? (
 						cats.map((animal, i) => {
 							return <AnimalCard animal={animal} key={animal.id} />;
-						})) : (<p className="col-sm-12 col-md-12 col-lg-12 text-center lead">'No Cats Currently Available</p>)}
+						})) : (<p className="col-sm-12 col-md-12 col-lg-12 text-center lead">No Cats Currently Available</p>)}
 					</div>
 					{loader}
 				</div>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Kavivanar&family=Montserrat&display=swap');
+
 :root {
     --bs-blue-8: rgba(13, 110, 253, 0.8);
     --bs-indigo-8: rgba(102, 16, 242, 0.8);
@@ -8,11 +10,13 @@
 html {
     height: 100vh;
 }
-
+ * {
+    font-family: 'Montserrat', sans-serif;
+ }
 body, #root {
     min-height: 100vh;
 }
-a {text-decoration: unset;}
+a {text-decoration: unset; font-weight: bold;}
 
 .navbar-brand {
     max-width: 250px;
@@ -59,15 +63,16 @@ picture.card-img,
 .text-teal,
 a.text-purple:hover {
     color: var(--bs-teal);
-    /* font-weight: 400;
-    text-shadow:  .5rem .3rem 8px rgba(0, 0 , 0, .3)!important; */
 }
 .text-purple,
 a.text-teal:hover {
     color: var(--bs-purple);
-    /* font-weight: 400;
-    text-shadow:  .5rem .3rem 8px rgba(0, 0 , 0, .3)!important; */
 }
+
+.text-shadow {
+    text-shadow:  .15rem .15rem 4px rgba(0, 0 , 0, .3)!important;
+}
+
 .bg-teal {
     background-color: var(--bs-teal);
 }
@@ -97,32 +102,45 @@ a.text-teal:hover {
 
 .instagram {
     color: #F77737; 
-    color: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-    color: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-    color: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.instagram:hover {
+    color: #833AB4;
 }
 
 .facebook {
     color: #4267B2; 
-    color: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-    color: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-    color: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+.facebook:hover {
+    color: #00C6FF
 }
 
 .twitter {
     color: #1DA1F2; 
-    color: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-    color: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-    color: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+.twitter:hover {
+    color: #AAB8C2;
 }
 
 .linkedin {
     color: #2867B2; 
-    color: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-    color: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-    color: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+.linkedin:hover {
+    color: #FFFFFF;
+}
+
+.kavivanar {
+    font-family: 'Kavivanar', cursive;
+}
+
+.fredericka-the-great {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.ratio-9x16 {
+    --aspect-ratio: calc(16 / 9 * 100%);
+}
+
+.ratio .card .card-body {
+    overflow-y: hidden;
 }

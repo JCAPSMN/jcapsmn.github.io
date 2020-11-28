@@ -2,10 +2,21 @@ import React from 'react';
 import AdoptionFragment from "../components/AdoptionFragment";
 import BlogFragment from "../components/BlogFragment";
 export default function Home() {
+
     return (<>
-        <h2 className="display-4 text-center text-teal">Find a companion</h2>
+        <div className="container">
+            <div className="row">
+
+
+            </div>
+        </div>
+        <section className="">
+        <h2 className="display-4 text-center text-purple fredericka-the-great">Find a Companion</h2>
         <AdoptionFragment />
-        <h2 className="display-4 text-center text-purple">Latest Pets News</h2>
-        <BlogFragment />
+        </section>
+        <h2 className="display-4 text-center text-purple fredericka-the-great">Latest Pets News</h2>
+        <section id="blogfragment" className="content-box" >
+            <BlogFragment />
+        </section>
     </>)
 }
