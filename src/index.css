@@ -12,6 +12,7 @@ html {
 body, #root {
     min-height: 100vh;
 }
+a {text-decoration: unset;}
 
 .navbar-brand {
     max-width: 250px;
@@ -55,6 +56,24 @@ picture.card-img,
 }
 
 
+.text-teal,
+a.text-purple:hover {
+    color: var(--bs-teal);
+    /* font-weight: 400;
+    text-shadow:  .5rem .3rem 8px rgba(0, 0 , 0, .3)!important; */
+}
+.text-purple,
+a.text-teal:hover {
+    color: var(--bs-purple);
+    /* font-weight: 400;
+    text-shadow:  .5rem .3rem 8px rgba(0, 0 , 0, .3)!important; */
+}
+.bg-teal {
+    background-color: var(--bs-teal);
+}
+.bg-purple {
+    background-color: var(--bs-purple);
+}
 .btn-teal {
     color: #fff;
     background-color: var(--bs-teal);

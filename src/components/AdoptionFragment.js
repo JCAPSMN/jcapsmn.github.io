@@ -58,8 +58,8 @@ const Grid = () => {
     	<div className="container py-5">
       		<nav className="mb-2">
 				<div className="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-					<a className="nav-link active" id="nav-cat-tab" data-toggle="tab" href="#nav-cat" role="tab" aria-controls="nav-cat" aria-selected="true">Cats</a>
-					<a className="nav-link" id="nav-dog-tab" data-toggle="tab" href="#nav-dog" role="tab" aria-controls="nav-dog" aria-selected="false">Dogs</a>
+					<a className="nav-link active text-purple" id="nav-cat-tab" data-toggle="tab" href="#nav-cat" role="tab" aria-controls="nav-cat" aria-selected="true">Cats</a>
+					<a className="nav-link text-purple" id="nav-dog-tab" data-toggle="tab" href="#nav-dog" role="tab" aria-controls="nav-dog" aria-selected="false">Dogs</a>
 				</div>
 			</nav>
 			<div className="tab-content" id="nav-tabContent">

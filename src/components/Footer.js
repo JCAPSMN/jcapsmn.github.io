@@ -9,10 +9,10 @@ export default function Footer() {
                         Privacy Policy / JCAPS &copy; 2021 / All Rights Reserved
                     </div>
                     <div className="col col-lg-6">
-                        <Link className="mx-2" to="/">Contact Us</Link>
-                        <Link className="mx-2" to="/adopt">Adopt a Pet</Link>
-                        <Link className="mx-2" to="/blog">Blog</Link>
-                        <Link className="mx-2" to="/">Events</Link>
+                        <Link className="mx-2 text-purple" to="/">Contact Us</Link>
+                        <Link className="mx-2 text-purple" to="/adopt">Adopt a Pet</Link>
+                        <Link className="mx-2 text-purple" to="/blog">Blog</Link>
+                        <Link className="mx-2 text-purple" to="/">Events</Link>
                     </div>
                 </div>
             </div>            
