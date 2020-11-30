@@ -44,7 +44,7 @@ const GridItem = ({ animal, index }) => {
 					<svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-heart-fill my-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 						<path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
 					</svg>
-					<a href={animal.url} className="card-text text-light stretched-link">View on Petfinder</a>
+					<a href={animal.url} target="_blank" rel="noreferrer" className="card-text text-light stretched-link">View on Petfinder</a>
 				</div>
 			</div>
     	</div>

@@ -80,24 +80,49 @@ a.text-teal:hover {
     background-color: var(--bs-purple);
 }
 .btn-teal {
-    color: #fff;
+    color: white;
     background-color: var(--bs-teal);
     border-color: var(--bs-teal);
 }
 .btn-teal:hover {
-    color: #fff;
+    color: white;
     background-color: var(--bs-purple);
     border-color: var(--bs-purple);
 }
+.btn-teal-o{
+    color: white;
+    background-color: var(--bs-teal);
+    border-color: var(--bs-teal);
+    transition: all 750ms ease-in-out;
+}
+.btn-teal-o:hover {
+    color: white;
+    background-color: #07B07E;
+    border-color: var(--bs-teal);
+    transform: scale(.98);
+}
 .btn-purple {
-    color: #fff;
+    color: white;
     background-color: var(--bs-purple);
     border-color: var(--bs-purple);
 }
 .btn-purple:hover {
-    color: #fff;
+    color: white;
     background-color: var(--bs-teal);
-    border-color: var(--bs-teal);;
+    border-color: var(--bs-teal);
+}
+
+.btn-purple-o {
+    color: white;
+    background-color: var(--bs-purple);
+    border-color: var(--bs-purple);
+    transition: all 750ms ease-in-out;
+}
+.btn-purple-o:hover {
+    color: white;
+    background-color: #5629A8;
+    border-color: var(--bs-purple);
+    transform: scale(.98);
 }
 
 .instagram {
@@ -126,7 +151,7 @@ a.text-teal:hover {
     color: #2867B2; 
 }
 .linkedin:hover {
-    color: #FFFFFF;
+    color: whiteFFF;
 }
 
 .kavivanar {
@@ -143,4 +168,26 @@ a.text-teal:hover {
 
 .ratio .card .card-body {
     overflow-y: hidden;
+}
+
+
+.cta-slider {
+    width: 100%;
+    height: 100%;
+    background-position: center right;
+    background-size: cover;
+    min-height: 600px;
+    margin: 0;
+}
+
+@media (min-width: 768px) { 
+    .cta-slider .cta-splash {
+        clip-path: polygon(0% 0%, 75% 0%, 95% 50%, 75% 100%, 0% 100%);
+    }
+}
+
+.display-5 {
+    font-size: calc(1.625rem + 1vw);
+    font-weight: 300;
+    line-height: 1.2;
 }
