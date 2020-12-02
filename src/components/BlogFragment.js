@@ -20,13 +20,19 @@ export default function BlogFragment() {
     const formatDate = (date, options) => {
     	return new Date(date).toLocaleDateString('en-US', options);
     }
-    const getCategory = (article) => {
-        const category = article['_embedded']['wp:term'][0].filter(term => term);
-        return category[0];
+    const listCategories = (article) => {
+        const categories = article['_embedded']['wp:term'];
+        for (let index = 0; index < categories.length; index++) {
+            const terms = categories[index];
+            for (let index = 0; index < terms.length; index++) {
+                const category = terms[index];
+                return <span className="badge rounded-pill bg-purple">{category.name}</span>;     
+            } 
+        }
     }
     return (
         <div className="container">
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 py-5">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 g-5 py-5">
             {articles.length > 0 ? (
                 articles.map((article, i) => {
                     return  <div key={i} className="col">
@@ -36,7 +42,7 @@ export default function BlogFragment() {
                                         <div className="card-body d-flex h-100 flex-column">
                                             <h5 className="card-title">{article.title.rendered}</h5>
                                             <span className="mb-3">
-                                            <span className="badge rounded-pill bg-purple">{getCategory(article).name}</span>
+                                            {listCategories(article)}
                                             </span>
                                             <p className="card-text" dangerouslySetInnerHTML={{__html: formatExcerpt(article.excerpt.rendered, 110)}} />
                                         </div>
@@ -47,7 +53,7 @@ export default function BlogFragment() {
                                     </div>
                                 </div>
                             })
-                        ) : (<p className="col-sm-12 col-md-12 col-lg-12 text-center lead">There are currently no blog posts to read</p>)
+                        ) : (<p className="col-sm-12 col-md-12 col-lg-12 col-xxl-12 text-center lead">There are currently no blog posts to read</p>)
                     }
 		    </div>
         </div>

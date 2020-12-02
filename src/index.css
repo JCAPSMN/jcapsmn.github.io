@@ -36,8 +36,7 @@ button.nav-link {
 picture.card-img,
 .card-img,
 .card-img-thumbnail,
-.card-img-top {
-    height: 100%;
+.card-img-top, .img-rect {
     width: 100%;
     object-fit: cover;
     object-position: center center;
@@ -61,11 +60,11 @@ picture.card-img,
 
 
 .text-teal,
-a.text-purple:hover {
+a.text-purple:hover, a:hover {
     color: var(--bs-teal);
 }
 .text-purple,
-a.text-teal:hover {
+a.text-teal:hover, a {
     color: var(--bs-purple);
 }
 
@@ -133,18 +132,18 @@ a.text-teal:hover {
     color: #833AB4;
 }
 
-.facebook {
-    color: #4267B2; 
-}
-.facebook:hover {
-    color: #00C6FF
-}
-
 .twitter {
-    color: #1DA1F2; 
+    color: #00C6FF;
 }
 .twitter:hover {
+    color: #4267B2; 
+}
+
+.facebook {
     color: #AAB8C2;
+}
+.facebook:hover {
+    color: #1DA1F2;
 }
 
 .linkedin {
