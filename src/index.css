@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Kavivanar&family=Montserrat&display=swap');
+
+:root {
+    --bs-blue-8: rgba(13, 110, 253, 0.8);
+    --bs-indigo-8: rgba(102, 16, 242, 0.8);
+    --bs-purple-8: rgba(111, 66, 193, 0.8);
+    --bs-teal-8: rgba(32, 201, 151, 0.8);
+    --bs-red-8: rgba(220, 53, 69, 0.8);
+}
+html {
+    height: 100vh;
+}
+ * {
+    font-family: 'Montserrat', sans-serif;
+ }
+body, #root {
+    min-height: 100vh;
+}
+a {text-decoration: unset; font-weight: bold;}
+
+.navbar-brand {
+    max-width: 250px;
+}
+button.nav-link {
+    font-family: inherit;
+    border: unset;
+    background-color: unset;
+    outline: unset;
+
+}
+
+.totop {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2%;
+    margin-left: calc(99% - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    overflow: hidden;
+}
+
+.post-body img {
+    display: block;
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.ratio > img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+
+}
+picture.card-img,
+.card-img,
+.card-img-thumbnail,
+.card-img-top, .ratio > .img-rect, .img-rect {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+.card-img-overlay {
+    opacity: 0;
+    transition: all 750ms ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover > .card-img-overlay {
+    opacity: 1;
+    background-color: var(--bs-purple-8);
+}
+
+figure {
+    margin-top: 2rem;
+    position: relative;
+}
+.blockquote::before, .blockquote::after {
+    position: absolute;
+    font-size: 10rem;
+    font-family: cursive;
+    color: #ccc;
+} 
+.blockquote::before {
+    content: open-quote;
+    top: 0;
+    left: 0;
+    margin-top: -5.5rem;
+    margin-left: -1.5rem;
+}
+.blockquote::after {
+    content: close-quote;
+    bottom: 0;
+    right: 0;
+    margin-bottom: -9.5rem;
+    margin-right: -1.5rem;
+}
+
+@media screen and (min-width: 992px) {
+    .fs-1 {
+        font-size: 1.2rem !important;
+    }
+}
+
+
+.text-teal,
+a.text-purple:hover, a:hover {
+    color: var(--bs-teal);
+}
+.text-purple,
+a.text-teal:hover, a {
+    color: var(--bs-purple);
+}
+
+.text-shadow {
+    text-shadow:  .15rem .15rem 4px rgba(0, 0 , 0, .3)!important;
+}
+
+.bg-teal {
+    background-color: var(--bs-teal);
+}
+.bg-purple {
+    background-color: var(--bs-purple);
+}
+.btn-teal {
+    color: white;
+    background-color: var(--bs-teal);
+    border-color: var(--bs-teal);
+}
+.btn-teal:hover {
+    color: white;
+    background-color: var(--bs-purple);
+    border-color: var(--bs-purple);
+}
+.btn-teal-o{
+    color: white;
+    background-color: var(--bs-teal);
+    border-color: var(--bs-teal);
+    transition: all 750ms ease-in-out;
+}
+.btn-teal-o:hover {
+    color: white;
+    background-color: #07B07E;
+    border-color: var(--bs-teal);
+    transform: scale(.98);
+}
+.btn-purple {
+    color: white;
+    background-color: var(--bs-purple);
+    border-color: var(--bs-purple);
+}
+.btn-purple:hover {
+    color: white;
+    background-color: var(--bs-teal);
+    border-color: var(--bs-teal);
+}
+
+.btn-purple-o {
+    color: white;
+    background-color: var(--bs-purple);
+    border-color: var(--bs-purple);
+    transition: all 750ms ease-in-out;
+}
+.btn-purple-o:hover {
+    color: white;
+    background-color: #5629A8;
+    border-color: var(--bs-purple);
+    transform: scale(.98);
+}
+
+.instagram {
+    color: #F77737; 
+}
+
+.instagram:hover {
+    color: #833AB4;
+}
+
+.twitter {
+    color: #00C6FF;
+}
+.twitter:hover {
+    color: #4267B2; 
+}
+
+.facebook {
+    color: #AAB8C2;
+}
+.facebook:hover {
+    color: #1DA1F2;
+}
+
+.linkedin {
+    color: #2867B2; 
+}
+.linkedin:hover {
+    color: whiteFFF;
+}
+
+.kavivanar {
+    font-family: 'Kavivanar', cursive;
+}
+
+.fredericka-the-great {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.ratio-9x16 {
+    --aspect-ratio: calc(16 / 9 * 100%);
+}
+
+.ratio .card .card-body {
+    overflow-y: hidden;
+}
+
+
+.cta-slider {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    min-height: 600px;
+    margin: 0;
+}
+
+@media (min-width: 768px) { 
+    .cta-slider .cta-splash {
+        clip-path: polygon(0% 0%, 75% 0%, 95% 50%, 75% 100%, 0% 100%);
+    }
+}
+@media (min-width: 1400x) { 
+    .cta-slider {
+        background-position: 300px center;
+    }
+}
+.display-5 {
+    font-size: calc(1.625rem + 1vw);
+    font-weight: 300;
+    line-height: 1.2;
+}
