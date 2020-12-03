@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Header() {
@@ -15,11 +16,11 @@ export default function Header() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav ml-auto">
-                        <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-                        <Link className="nav-link" to="/adopt">Adopt A Pet</Link>
-                        <Link className="nav-link" to="/">Events</Link>
-                        <Link className="nav-link" to="/">About Us</Link>
-                        <Link className="nav-link" to="/blog">Blog</Link>
+                        <NavLink className="nav-link" activeClassName="active" to="/">Home</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/adopt">Adopt A Pet</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/events">Events</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/about">About Us</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/blog">Blog</NavLink>
                     </div>
                     <div className="navbar-nav ml-auto">
                         <button className="btn btn-purple my-3 mr-lg-3 my-lg-0" aria-current="page" to="/">Donate Now!</button>

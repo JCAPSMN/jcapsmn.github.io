@@ -81,6 +81,9 @@ const Grid = () => {
 					{loader}
 				</div>
 			</div>
+			<div className="container mt-5">
+				<a href="https://www.petfinder.com/member/us/mn/jackson/jackson-county-animal-protection-society-mn483/" className="col-12 col-md-6 offset-md-3 btn btn-lg btn-teal">See all of our friends on Petfinder</a>
+			</div>
 		</>
 	);
 };

@@ -26,9 +26,9 @@ const GridItem = ({ animal, index }) => {
 						<source media="(min-width: 1000px)" srcSet={`${animal.photos[pos].full} 1000w` }/>
 					)}
 					{animal.photos[pos].small ? (
-						<img src={animal.photos[pos].medium} alt="..." className="card-img img-thumbnail" />
+						<img src={animal.photos[pos].medium} alt="..." className="card-img img-thumbnail" loading="lazy" />
 					) : (
-						<img src={process.env.PUBLIC_URL + '/unavailable-image.jpg'} alt="..."  className="card-img img-thumbnail"/>
+						<img src={process.env.PUBLIC_URL + '/unavailable-image.jpg'} alt="..."  className="card-img img-thumbnail" loading="lazy" />
 					)}
 				</picture>
 				)
