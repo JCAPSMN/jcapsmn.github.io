@@ -27,7 +27,7 @@ export default function Blog() {
 
     const featuredImage = (article) => {
         const photos = article['_embedded']['wp:featuredmedia'][0]['media_details']['sizes'];
-        console.log(photos)
+        const key = Object.keys(photos)[0];
         return (
             <picture className="w-25 ratio ratio-1x1">
                 {photos.medium && (
@@ -42,11 +42,11 @@ export default function Blog() {
                 {photos.full && (
                     <source media="(min-width: 1100px)" srcSet={`${photos.full.source_url} 1200w`} />
                 )}
-                {photos['post-thumbnail'] ? (
-                    <img src={photos.full.source_url} alt="..." className="img-fluid w-100" loading="lazy" />
+                {photos[key] ? (
+                    <img src={photos[key].source_url} alt="..." className="img-fluid w-100" loading="lazy" />
                 ) : (
-                        <img src={process.env.PUBLIC_URL + '/unavailable-image.jpg'} alt="..." className="img-fluid w-100" loading="lazy" />
-                    )}
+                    <img src={process.env.PUBLIC_URL + '/unavailable-image.jpg'} alt="..." className="img-fluid w-100" loading="lazy" />
+                )}
             </picture>
         )
     }
