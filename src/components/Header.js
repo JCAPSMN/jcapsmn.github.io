@@ -16,7 +16,7 @@ export default function Header() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav ml-auto">
-                        <NavLink className="nav-link" activeClassName="active" to="/">Home</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" exact to="/">Home</NavLink>
                         <NavLink className="nav-link" activeClassName="active" to="/adopt">Adopt A Pet</NavLink>
                         <NavLink className="nav-link" activeClassName="active" to="/events">Events</NavLink>
                         <NavLink className="nav-link" activeClassName="active" to="/about">About Us</NavLink>
