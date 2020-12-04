@@ -1,7 +1,7 @@
 import React from 'react';
 import useFetch from '../hooks/useFetch';
 import { useParams } from 'react-router-dom';
-import DocumentMeta from 'react-document-meta';
+import { Helmet } from 'react-helmet';
 
 export default function Post() {
     let { slug } = useParams();
@@ -40,23 +40,41 @@ export default function Post() {
                 {photos[key] ? (
                     <img src={photos[key].source_url} alt="..." className="img-fluid w-100" loading="lazy" />
                 ) : (
-                    <img src={process.env.PUBLIC_URL + '/unavailable-image.jpg'} alt="..." className="img-fluid w-100" loading="lazy" />
-                )}
+                        <img src={process.env.PUBLIC_URL + '/unavailable-image.jpg'} alt="..." className="img-fluid w-100" loading="lazy" />
+                    )}
             </picture>
         )
     }
-    const meta = {};
-    const createMeta = (article) => {
-        return article['yoast_head']
-    } 
+    const meta = {
+
+    };
+    const createPhotoMeta = (article) => {
+        const photos = article['_embedded']['wp:featuredmedia'][0]['media_details']['sizes'];
+        const key = Object.keys(photos)[0];
+        return (photos[key]);
+    }
 
 
     return (<>
-        
         {post && post.map((article, i) => {
             return <div key={i} className="">
-                {createMeta(article)}
-                <DocumentMeta {...createMeta(article)} />
+                <Helmet>
+                    <title>{article.title.rendered + " - Jackson County Animal Protection Society"}</title>
+                    <meta name="robots" content="noindex, follow" />
+                    <meta
+                        name="description"
+                        content={article.excerpt.rendered}
+                    />
+                    <meta property="og:locale" content="en_US" />
+                    <meta property="og:type" content="article" />
+                    <meta property="og:title" content={article.title.rendered + " - Jackson County Animal Protection Society"} />
+                    <meta property="og:url" content={createPhotoMeta(article).source_url} />
+                    <meta property="og:site_name" content="Jackson County Animal Protection Society" />
+                    <meta property="article:modified_time" content={article.modified_gmt} />
+                    <meta property="og:image" content={createPhotoMeta(article).source_url} />
+                    <meta property="og:image:width" content={createPhotoMeta(article).width} />
+                    <meta property="og:image:height" content={createPhotoMeta(article).height} />
+                </Helmet>
                 <div className="ratio ratio-21x9 mb-5 shadow">
                     {featuredImage(article)}
                 </div>
