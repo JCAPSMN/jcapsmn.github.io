@@ -50,7 +50,7 @@ export default function BlogFragment() {
     }
     return (
         <div className="container">
-            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 g-5 py-5">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-3 g-5 py-5">
                 {posts && posts.map((article, i) => {
                     return <div key={i} className="col">
                         <div className="ratio ratio-9x16">

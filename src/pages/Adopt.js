@@ -10,7 +10,7 @@ export default function Adopt() {
         <div className="container mt-5">
             <h2 className="display-4 text-center text-purple fredericka-the-great">The Adoption Process</h2>
             <section className="my-5">
-                <h3 className="kavivanar">What is Petfinder</h3>
+                <h3 className="kavivanar">What is Petfinder? </h3>
                 <figure className="shadow">
                     <blockquote className="blockquote p-4">
                         <p>Petfinder is an online, searchable database of animals who need homes. It is also a directory of nearly 11,000 animal shelters and adoption organizations across the U.S., Canada and Mexico. Organizations maintain their own home pages and available-pet databases.</p>

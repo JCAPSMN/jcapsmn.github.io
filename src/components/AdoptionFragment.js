@@ -3,7 +3,7 @@ import AnimalCard from "./AnimalCard";
 import pf from "../API";
 import Loader from "./Loader";
 
-const Grid = () => {
+const AdoptionFragment = () => {
 	const [loading, setLoading] = useState(true);
 	const [currentPage] = useState(1);
 	const [totalPage, setTotalPage] = useState(null);
@@ -63,8 +63,8 @@ const Grid = () => {
 			</nav>
 			<div className="container tab-content" id="nav-tabContent">
 				<div className="tab-pane fade show active" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">
-					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 g-4">
-						{cats.length > 0 ? (
+					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-3 g-4">
+						{(cats.length > 0 && cats.length <= 6) ? (
 							cats.map((animal, i) => {
 								return <AnimalCard animal={animal} key={animal.id} />;
 							})) : (<p className="col-sm-12 col-md-12 col-lg-12 col-xxl-12 text-center lead">No Cats Currently Available</p>)}
@@ -72,8 +72,8 @@ const Grid = () => {
 					{loader}
 				</div>
 				<div className="tab-pane fade" id="nav-dog" role="tabpanel" aria-labelledby="nav-dog-tab">
-					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 g-4">
-						{dogs.length > 0 ? (
+					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-3 g-4">
+						{(dogs.length > 0 && dogs.length <= 6) ? (
 							dogs.map((animal, i) => {
 								return <AnimalCard animal={animal} key={animal.id} />;
 							})) : (<p className="col-sm-12 col-md-12 col-lg-12 col-xxl-12 text-center lead">No Dogs Currently Available</p>)}
@@ -88,4 +88,4 @@ const Grid = () => {
 	);
 };
 
-export default Grid;
+export default AdoptionFragment;

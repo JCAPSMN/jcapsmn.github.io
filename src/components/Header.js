@@ -18,7 +18,7 @@ export default function Header() {
                     <div className="navbar-nav ml-auto">
                         <NavLink className="nav-link" activeClassName="active" exact to="/">Home</NavLink>
                         <NavLink className="nav-link" activeClassName="active" to="/adopt">Adopt A Pet</NavLink>
-                        <NavLink className="nav-link" activeClassName="active" to="/events">Events</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/get-involved">Get Involved</NavLink>
                         <NavLink className="nav-link" activeClassName="active" to="/about">About Us</NavLink>
                         <NavLink className="nav-link" activeClassName="active" to="/blog">Blog</NavLink>
                     </div>

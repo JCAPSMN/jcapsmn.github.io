@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Events() {
+export default function GetInvolved() {
     return (
         <div>
-            Events
+            Get Involved
         </div>
     )
 }

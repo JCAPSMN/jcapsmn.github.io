@@ -5,7 +5,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 import Home from './pages/Home';
 import Adopt from './pages/Adopt';
-import Events from './pages/Events';
+import GetInvolved from './pages/GetInvolved';
 import About from './pages/About';
 import Blog from './pages/Blog';
 import Post from './components/Post';
@@ -22,7 +22,7 @@ function App() {
 		<Switch>
 			<Route exact path="/" component={Home} />
 			<Route path="/adopt" component={Adopt} />
-			<Route path="/events" component={Events} />
+			<Route path="/get-involved" component={GetInvolved} />
 			<Route path="/about" component={About} />
 			<Route exact path="/blog" component={Blog} />
 			<Route path="/blog/:slug" component={Post} />
